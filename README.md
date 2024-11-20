@@ -1,3 +1,27 @@
+# **NASA API Tools Collection**
+
+### **Description**
+The `alta3.nasa_api` collection provides tools to interact with NASA's Astronomy Picture of the Day (APOD) API. This collection includes:
+- A custom Ansible module (`apod_module`) for fetching APOD data.
+- A role (`apod_downloader`) for downloading APOD images to a specified directory.
+
+### **Included Content**
+| **Type**  | **Name**          | **Description**                                      |
+|-----------|-------------------|------------------------------------------------------|
+| Module    | `apod_module`     | Fetch data from NASA's APOD API, including HD image URLs. |
+| Role      | `apod_downloader` | Fetch and download high-definition APOD images to a specified directory. |
+
+### **Requirements**
+- Python `requests` library installed on the control node.
+- A valid NASA API key for accessing the APOD API.
+
+### **Installation**
+To install this collection, run:
+```bash
+ansible-galaxy collection install git+https://github.com/csfeeser/nasa_api.git
+```
+
+---
 ### README for the **Module**
 
 ## alta3.nasa_api.apod – Fetch data from NASA's APOD (Astronomy Picture of the Day) API
