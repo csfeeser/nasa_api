@@ -1,0 +1,20 @@
+---
+- name: Ensure download directory exists
+  ansible.builtin.file:
+    path: "{{ apod_download_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Fetch APOD data
+  apod:
+    api_key: "{{ apod_api_key }}"
+    count: "{{ apod_count }}"
+    thumbs: false
+  register: apod_data
+
+- name: Download APOD images
+  ansible.builtin.get_url:
+    url: "{{ item.hdurl }}"
+    dest: "{{ apod_download_dir }}/{{ item.date }}_{{ item.title | regex_replace('[^a-zA-Z0-9]', '_') }}.jpg"
+  loop: "{{ apod_data.apod_data }}"
+  when: item.hdurl is defined

@@ -1,0 +1,9 @@
+namespace: alta3
+name: apod_tools
+version: 1.0.0
+readme: README.md
+authors:
+  - Chad Feeser, csfeeser@alta3.com
+description:
+  A collection that provides tools for interacting with the NASA APOD API.
+license: MIT

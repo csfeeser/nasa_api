@@ -1,0 +1,8 @@
+# Default API key (you can override in the playbook or inventory)
+apod_api_key: DEMO_KEY
+
+# Number of APODs to fetch
+apod_count: 3
+
+# Directory to store downloaded images
+apod_download_dir: /tmp/apod_images
